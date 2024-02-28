@@ -45,3 +45,6 @@ calling `inputName("Laurence")` on Remix and open debugger, go to step 344
 memory variable `text_temp` is set to `"Laurence"`:
 
 ![image](https://github.com/BigBangInfinity/Encode_ExpertSolidityBootcamp_Homework/assets/37957341/a07438b2-f45d-4c4e-8242-33977544bbc1)
+
+![image](https://github.com/BigBangInfinity/Encode_ExpertSolidityBootcamp_Homework/assets/37957341/c96019ae-09b5-41bd-a797-2d0549ec6a1d)
+
