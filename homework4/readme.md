@@ -64,3 +64,45 @@ Suite result: ok. 2 passed; 0 failed; 0 skipped; finished in 117.42ms (94.33ms C
 
 Ran 1 test suite in 131.50ms (117.42ms CPU time): 2 tests passed, 0 failed, 0 skipped (2 total tests)
 ```
+
+
+## Try out the Solidity Template or the Foundry Template
+
+1. Start a new project using the [Solidity Template](https://github.com/PaulRBerg/hardhat-template)
+
+2. Make a fork of mainnet from the command line (you may need to setup an Infura or Alchemy account)
+
+```
+npx hardhat node --fork https://mainnet.infura.io/v3/<API_KEY>
+```
+
+Adding 
+
+```
+  networks: {
+    hardhat: {
+      accounts: {
+        mnemonic,
+      },
+      forking: {
+        url: `https://mainnet.infura.io/v3/${infuraApiKey}`}
+/// etc.
+```
+
+into hardhat.config.ts
+
+3. Query the mainnet using the command line to retrieve a property such as latest block number.
+
+```
+npx hardhat console --network mainnet
+
+>  await ethers.provider.getBlockNumber()
+19339246
+>  await ethers.provider.getBlockNumber()
+19339247
+>  await ethers.provider.getBlockNumber()
+19339248
+>  await ethers.provider.getBlockNumber()
+19339252
+
+```
