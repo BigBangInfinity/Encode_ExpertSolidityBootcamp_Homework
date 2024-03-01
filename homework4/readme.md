@@ -40,3 +40,27 @@ Generated svg file C:\homework4\Store_new.svg
 ![image](https://github.com/BigBangInfinity/Encode_ExpertSolidityBootcamp_Homework/assets/37957341/23c906fb-814a-4d59-a710-0bdd203cf7af)
 
 
+## Foundry introduction 
+
+Install foundry, create default template with 
+
+```
+forge init
+```
+
+Run tests
+
+```
+$ forge test
+[⠰] Compiling...
+[⠘] Compiling 24 files with 0.8.21
+[⠃] Solc 0.8.21 finished in 2.34s
+Compiler run successful!
+
+Ran 2 tests for test/Counter.t.sol:CounterTest
+[PASS] testFuzz_SetNumber(uint256) (runs: 256, μ: 27320, ~: 28409)
+[PASS] test_Increment() (gas: 28379)
+Suite result: ok. 2 passed; 0 failed; 0 skipped; finished in 117.42ms (94.33ms CPU time)
+
+Ran 1 test suite in 131.50ms (117.42ms CPU time): 2 tests passed, 0 failed, 0 skipped (2 total tests)
+```
