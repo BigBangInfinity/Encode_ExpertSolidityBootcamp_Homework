@@ -55,3 +55,19 @@
    Then the runtime bytecode is stored to memory.
    Then two child contracts are called with the `CREATE` opcode. The `CREATE` opcode takes three inputs: `value`, `offset`, `size`. The part in the memory starting at `offset=23` with `size=CS` is exactly the constructor + runtime bytecode concatenated without the leading zeros.
    The `value` for the first child contract is the `callvalue`, i.e. the ETH sent at deployment to the contract. The value for the second child contract is `0`.
+
+3. Explain what the following code is doing in the Yul ERC20 contract
+
+   https://docs.soliditylang.org/en/latest/yul.html
+
+   ```
+   function allowanceStorageOffset(account, spender) -> offset {
+                offset := accountToStorageOffset(account)
+                mstore(0, offset)
+                mstore(0x20, spender)
+                offset := keccak256(0, 0x40)
+            }
+   ```
+
+   For a given account -> spender pair, the function calculates the location on the storage to store the allowance (the amount which the account allows the spender to spend)
+   keccak hashing would concatenate account and spender address and calculate a hash (but an offset of `0x1000` is applied to the account for some reason)
