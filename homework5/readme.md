@@ -111,6 +111,7 @@ Sending 1 wei with the deployment of the contract triggers a revert:
   
        ![image](https://github.com/BigBangInfinity/Encode_ExpertSolidityBootcamp_Homework/assets/37957341/64c0f481-f8ec-4dad-8210-724821a34db8)
 
-4. Can you think of a situation where the opcode EXTCODECOPY is used ?
-5. Complete the assembly exercises in this repo
-Exercises
+5. Can you think of a situation where the opcode EXTCODECOPY is used ?
+
+    for example to distinguish between EOA and smart contracts given an address, EXTCODECOPY only returns bytes from a smart contract
+6. Complete the assembly exercises in this repo [Exercises](https://github.com/ExtropyIO/ExpertSolidityBootcamp/tree/main/exercises/assembly)
