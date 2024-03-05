@@ -70,12 +70,19 @@ e26a414602d575b600080fd5b60336047565b604051603e9190605d565b60405180910
 0872b5d4b9f200afddd5ed3c424f6b3b995bf467e212ec4c313f65365aeadf8e964736
 f6c63430008060033**
 
-3. Could the answer to Q1 allow an optimisation ?
-4. Can you trigger a revert in the init code in Remix ?
-5. Write some Yul to
-1. Add 0x07 to 0x08
-2. store the result at the next free memory location.
-3. (optional) write this again in opcodes
+2. Could the answer to Q1 allow an optimisation ?
+3. Can you trigger a revert in the init code in Remix ?
+
+Sending 1 wei with the deployment of the contract triggers a revert:
+
+![image](https://github.com/BigBangInfinity/Encode_ExpertSolidityBootcamp_Homework/assets/37957341/d74ff1b1-6bf0-4240-ae4a-49ec8d8c1094)
+
+![image](https://github.com/BigBangInfinity/Encode_ExpertSolidityBootcamp_Homework/assets/37957341/ed69e61a-8941-400e-aa66-760f77a19bdd)
+
+4. Write some Yul to
+    1. Add 0x07 to 0x08
+    2. store the result at the next free memory location.
+    3. (optional) write this again in opcodes
 5. Can you think of a situation where the opcode EXTCODECOPY is used ?
 6. Complete the assembly exercises in this repo
 Exercises
