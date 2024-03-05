@@ -85,29 +85,30 @@ Sending 1 wei with the deployment of the contract triggers a revert:
   
        ```
        // SPDX-License-Identifier: MIT
-        pragma solidity ^0.8.6;
-        
-        
-        contract Deploy2{
-        
-            constructor(){
-                assembly{
-                    let value := add(0x07, 0x08)
-                    mstore(0xe0, value)
-                }
-            }
-        
-        }
+         pragma solidity ^0.8.6;
+         
+         
+         contract Deploy2{
+         
+             constructor(){
+                 assembly{
+                     let value := add(0x07, 0x08)
+                     mstore(msize(), value)
+                 }
+             }
+         
+         }
        ```
        
        Result 0x0f stored at location 0xe0
         
-       ![image](https://github.com/BigBangInfinity/Encode_ExpertSolidityBootcamp_Homework/assets/37957341/e7af44a8-8bc0-4302-90e7-0177b0488d9a)
+       ![image](https://github.com/BigBangInfinity/Encode_ExpertSolidityBootcamp_Homework/assets/37957341/92783e41-4099-4227-979f-7f95a75088c1)
+
 
 
     3. (optional) write this again in opcodes
   
-       Corresponding opcodes: `PUSH1 08 PUSH1 07 ADD DIP1 PUSH1 e0 MSTORE POP`
+       Corresponding opcodes: `PUSH1 08 PUSH1 07 ADD DUP1 MSIZE MSTORE POP`
   
        ![image](https://github.com/BigBangInfinity/Encode_ExpertSolidityBootcamp_Homework/assets/37957341/64c0f481-f8ec-4dad-8210-724821a34db8)
 
