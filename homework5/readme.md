@@ -82,7 +82,35 @@ Sending 1 wei with the deployment of the contract triggers a revert:
 4. Write some Yul to
     1. Add 0x07 to 0x08
     2. store the result at the next free memory location.
+  
+       ```
+       // SPDX-License-Identifier: MIT
+        pragma solidity ^0.8.6;
+        
+        
+        contract Deploy2{
+        
+            constructor(){
+                assembly{
+                    let value := add(0x07, 0x08)
+                    mstore(0xe0, value)
+                }
+            }
+        
+        }
+       ```
+       
+       Result 0x0f stored at location 0xe0
+        
+       ![image](https://github.com/BigBangInfinity/Encode_ExpertSolidityBootcamp_Homework/assets/37957341/e7af44a8-8bc0-4302-90e7-0177b0488d9a)
+
+
     3. (optional) write this again in opcodes
-5. Can you think of a situation where the opcode EXTCODECOPY is used ?
-6. Complete the assembly exercises in this repo
+  
+       Corresponding opcodes: `PUSH1 08 PUSH1 07 ADD DIP1 PUSH1 e0 MSTORE POP`
+  
+       ![image](https://github.com/BigBangInfinity/Encode_ExpertSolidityBootcamp_Homework/assets/37957341/64c0f481-f8ec-4dad-8210-724821a34db8)
+
+4. Can you think of a situation where the opcode EXTCODECOPY is used ?
+5. Complete the assembly exercises in this repo
 Exercises
